@@ -42,3 +42,6 @@ Asignatura impartida por el **Departamento de Ingeniería Eléctrica, Electróni
 Este repositorio tiene finalidad exclusivamente docente.
 
 Si detectas algún error o tienes alguna sugerencia de mejora, puedes comunicarlo al profesorado de la asignatura.
+
+## Descipcion del alumno 56951
+Este proyecto consiste en el desarrollo de un juego de palas.
