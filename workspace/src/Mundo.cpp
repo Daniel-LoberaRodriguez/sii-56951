@@ -147,6 +147,13 @@ void CMundo::OnTimer(int value)
                 if (n > 0 && id_fifo >= 0) {
                    write(id_fifo, buffer, n);
                 }
+                
+                if (puntos1 >= 3 || puntos2 >= 3) {
+                   if (id_fifo >= 0) {
+                      close(id_fifo); // Cierra el pipe para avisar al logger
+                   }
+                   exit(0); // Termina el juego de tenis
+                }  
         }
 
 	if(fondo_dcho.Rebota(esfera))
@@ -158,12 +165,19 @@ void CMundo::OnTimer(int value)
 		puntos1++;
 		
 		char buffer[128];
-                int n = snprintf(buffer, sizeof(buffer), "Punto para Jugador 2! Marcador: %d - %d\n", puntos1, puntos2);
+                int n = snprintf(buffer, sizeof(buffer), "Punto para Jugador 1! Marcador: %d - %d\n", puntos1, puntos2);
                 if (n > 0 && id_fifo >= 0) {
                  write(id_fifo, buffer, n);
                 }
-	}
+                
+                if (puntos1 >= 3 || puntos2 >= 3) {
+                    if (id_fifo >= 0) {
+                        close(id_fifo); // Cierra el pipe para avisar al logger
+                    }
+                    exit(0); // Termina el juego de tenis
+	         }
 
+         }
 }
 
 void CMundo::OnKeyboardDown(unsigned char key, int x, int y)
