@@ -9,7 +9,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-
+//Includes de las fifos
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -21,7 +25,9 @@ CMundo::CMundo()
 
 CMundo::~CMundo()
 {
-
+        if (id_fifo >= 0) { //tengo que cerrar el fifo
+            close(id_fifo);
+        }
 }
 
 void CMundo::InitGL()
@@ -135,7 +141,13 @@ void CMundo::OnTimer(int value)
 		esfera.velocidad.x=2+2*rand()/(float)RAND_MAX;
 		esfera.velocidad.y=2+2*rand()/(float)RAND_MAX;
 		puntos2++;
-	}
+		
+                char buffer[128];
+                int n = snprintf(buffer, sizeof(buffer), "Punto para Jugador 2! Marcador: %d - %d\n", puntos1, puntos2);
+                if (n > 0 && id_fifo >= 0) {
+                   write(id_fifo, buffer, n);
+                }
+        }
 
 	if(fondo_dcho.Rebota(esfera))
 	{
@@ -144,6 +156,12 @@ void CMundo::OnTimer(int value)
 		esfera.velocidad.x=-2-2*rand()/(float)RAND_MAX;
 		esfera.velocidad.y=-2-2*rand()/(float)RAND_MAX;
 		puntos1++;
+		
+		char buffer[128];
+                int n = snprintf(buffer, sizeof(buffer), "Punto para Jugador 2! Marcador: %d - %d\n", puntos1, puntos2);
+                if (n > 0 && id_fifo >= 0) {
+                 write(id_fifo, buffer, n);
+                }
 	}
 
 }
@@ -164,6 +182,8 @@ void CMundo::OnKeyboardDown(unsigned char key, int x, int y)
 
 void CMundo::Init()
 {
+	id_fifo = open("p_fifo", O_WRONLY); // Abro el fifo
+	
 	Plano p;
 //pared inferior
 	p.x1=-7;p.y1=-5;
