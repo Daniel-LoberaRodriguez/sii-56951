@@ -45,3 +45,9 @@ Si detectas algún error o tienes alguna sugerencia de mejora, puedes comunicarl
 
 ## Descipcion del alumno 56951
 Este proyecto consiste en el desarrollo de un juego de palas.
+
+----------PRACTICA 2----------
+1. Se ha copiado logger en src y se ha editado.
+2. Se ha creado una fifo
+3. Se ha editado Mundo.cpp
+4. Ahora sale por terminal un marcador. El juego termina cuando uno de los jugadores anota 3 puntos.
