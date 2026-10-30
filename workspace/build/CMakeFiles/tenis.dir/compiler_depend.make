@@ -219,6 +219,7 @@ CMakeFiles/tenis.dir/src/Esfera.cpp.o: /home/daniel/56951/sii-56951/workspace/sr
   /usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h
 
 CMakeFiles/tenis.dir/src/Mundo.cpp.o: /home/daniel/56951/sii-56951/workspace/src/Mundo.cpp \
+  /home/daniel/56951/sii-56951/workspace/include/DatosMemCompartida.h \
   /home/daniel/56951/sii-56951/workspace/include/Esfera.h \
   /home/daniel/56951/sii-56951/workspace/include/Mundo.h \
   /home/daniel/56951/sii-56951/workspace/include/Plano.h \
@@ -412,6 +413,11 @@ CMakeFiles/tenis.dir/src/Mundo.cpp.o: /home/daniel/56951/sii-56951/workspace/src
   /usr/include/x86_64-linux-gnu/bits/mathcalls-macros.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
+  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
+  /usr/include/x86_64-linux-gnu/bits/mman-shared.h \
+  /usr/include/x86_64-linux-gnu/bits/mman.h \
+  /usr/include/x86_64-linux-gnu/bits/mman_ext.h \
   /usr/include/x86_64-linux-gnu/bits/openat2.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
@@ -488,6 +494,7 @@ CMakeFiles/tenis.dir/src/Mundo.cpp.o: /home/daniel/56951/sii-56951/workspace/src
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/mman.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/stat.h \
@@ -1186,6 +1193,7 @@ CMakeFiles/tenis.dir/src/Vector2D.cpp.o: /home/daniel/56951/sii-56951/workspace/
   /usr/lib/gcc/x86_64-linux-gnu/15/include/stddef.h
 
 CMakeFiles/tenis.dir/src/tenis.cpp.o: /home/daniel/56951/sii-56951/workspace/src/tenis.cpp \
+  /home/daniel/56951/sii-56951/workspace/include/DatosMemCompartida.h \
   /home/daniel/56951/sii-56951/workspace/include/Esfera.h \
   /home/daniel/56951/sii-56951/workspace/include/Mundo.h \
   /home/daniel/56951/sii-56951/workspace/include/Plano.h \
@@ -1447,8 +1455,6 @@ tenis: /lib64/ld-linux-x86-64.so.2 \
   CMakeFiles/tenis.dir/src/tenis.cpp.o
 
 
-CMakeFiles/tenis.dir/src/tenis.cpp.o:
-
 CMakeFiles/tenis.dir/src/Vector2D.cpp.o:
 
 CMakeFiles/tenis.dir/src/Raqueta.cpp.o:
@@ -1503,6 +1509,8 @@ CMakeFiles/tenis.dir/src/Plano.cpp.o:
 
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 
+/usr/include/x86_64-linux-gnu/sys/mman.h:
+
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h:
@@ -1514,6 +1522,14 @@ CMakeFiles/tenis.dir/src/Plano.cpp.o:
 /usr/include/x86_64-linux-gnu/bits/stat.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/x86_64-linux-gnu/bits/mman_ext.h:
+
+/usr/include/x86_64-linux-gnu/bits/mman-shared.h:
+
+CMakeFiles/tenis.dir/src/tenis.cpp.o:
+
+/usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
@@ -1562,6 +1578,8 @@ CMakeFiles/tenis.dir/src/Plano.cpp.o:
 /usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h:
 
 /usr/include/c++/15/limits:
+
+/usr/include/x86_64-linux-gnu/bits/mman-linux.h:
 
 /usr/include/c++/15/ios:
 
@@ -1633,6 +1651,8 @@ CMakeFiles/tenis.dir/src/Plano.cpp.o:
 
 /usr/include/c++/15/bits/istream.tcc:
 
+/home/daniel/56951/sii-56951/workspace/include/DatosMemCompartida.h:
+
 /usr/lib/x86_64-linux-gnu/libmvec.so.1:
 
 /usr/include/c++/15/bits/stl_iterator_base_types.h:
@@ -1656,6 +1676,8 @@ CMakeFiles/tenis.dir/src/Plano.cpp.o:
 /usr/include/c++/15/bits/locale_facets.tcc:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o:
+
+/usr/include/x86_64-linux-gnu/bits/mman.h:
 
 /usr/include/c++/15/bits/range_access.h:
 
@@ -1742,6 +1764,12 @@ CMakeFiles/tenis.dir/src/Plano.cpp.o:
 /usr/include/c++/15/bits/ostream.tcc:
 
 /usr/include/c++/15/bits/stl_iterator.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
+/usr/include/c++/15/bits/stl_pair.h:
+
+/usr/include/c++/15/bits/stl_bvector.h:
 
 /usr/include/c++/15/vector:
 
@@ -2074,9 +2102,3 @@ CMakeFiles/tenis.dir/src/Mundo.cpp.o:
 /usr/include/c++/15/bits/char_traits.h:
 
 /usr/include/x86_64-linux-gnu/bits/fcntl.h:
-
-/usr/include/c++/15/bits/stl_pair.h:
-
-/usr/include/c++/15/bits/stl_bvector.h:
-
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:

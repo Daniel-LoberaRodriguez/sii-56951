@@ -14,6 +14,8 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+
+#include <sys/mman.h>
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -121,6 +123,17 @@ void CMundo::OnDraw()
 
 void CMundo::OnTimer(int value)
 {	
+	datos->esfera = esfera;
+        datos->raqueta1 = jugador1;
+
+        if (datos->accion == 1) {
+           OnKeyboardDown('w', 0, 0); // Mover arriba
+        } else if (datos->accion == -1) {
+           OnKeyboardDown('s', 0, 0); // Mover abajo
+        } else {
+           jugador1.velocidad.y = 0;   // Si la acción es 0, detener la raqueta si no hay tecla pulsada
+        }
+	
 	jugador1.Mueve(0.025f);
 	jugador2.Mueve(0.025f);
 	esfera.Mueve(0.025f);
@@ -197,6 +210,39 @@ void CMundo::OnKeyboardDown(unsigned char key, int x, int y)
 void CMundo::Init()
 {
 	id_fifo = open("p_fifo", O_WRONLY); // Abro el fifo
+	
+	int fd = open("memoria_tenis", O_CREAT | O_RDWR, 0666);
+        if (fd == -1) {
+             perror("Error al abrir/crear el fichero de memoria compartida");
+             exit(1);
+        }
+        
+        if (ftruncate(fd, sizeof(DatosMemCompartida)) == -1) {
+          perror("Error al hacer ftruncate");
+          close(fd);
+          exit(1);
+        }
+        
+        if (ftruncate(fd, sizeof(DatosMemCompartida)) == -1) {
+          perror("Error al hacer ftruncate");
+          close(fd);
+          exit(1);
+        }
+        
+        void* ptr = mmap(NULL, sizeof(DatosMemCompartida), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+          
+        if (ptr == MAP_FAILED) {
+            perror("Error en mmap");
+            close(fd);
+            exit(1);
+        }
+
+    close(fd);
+    datos = static_cast<DatosMemCompartida*>(ptr);
+	
+	datos->esfera = esfera;
+        datos->raqueta1 = jugador1;
+        datos->accion = 0;
 	
 	Plano p;
 //pared inferior

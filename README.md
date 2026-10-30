@@ -51,3 +51,5 @@ Este proyecto consiste en el desarrollo de un juego de palas.
 2. Se ha creado una fifo
 3. Se ha editado Mundo.cpp
 4. Ahora sale por terminal un marcador. El juego termina cuando uno de los jugadores anota 3 puntos.
+-----------Pratica 3----------
+1. Se ha añadido un bot para controlar el jugador1 usando memoria compartida

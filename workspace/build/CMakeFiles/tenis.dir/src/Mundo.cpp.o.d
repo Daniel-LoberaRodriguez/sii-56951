@@ -173,6 +173,7 @@ CMakeFiles/tenis.dir/src/Mundo.cpp.o: \
  /home/daniel/56951/sii-56951/workspace/include/Esfera.h \
  /home/daniel/56951/sii-56951/workspace/include/Vector2D.h \
  /home/daniel/56951/sii-56951/workspace/include/Raqueta.h \
+ /home/daniel/56951/sii-56951/workspace/include/DatosMemCompartida.h \
  /home/daniel/56951/sii-56951/workspace/include/glut.h \
  /usr/include/GL/gl.h /usr/include/GL/glext.h \
  /usr/include/KHR/khrplatform.h \
@@ -223,4 +224,10 @@ CMakeFiles/tenis.dir/src/Mundo.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
  /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
+ /usr/include/x86_64-linux-gnu/sys/mman.h \
+ /usr/include/x86_64-linux-gnu/bits/mman.h \
+ /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h \
+ /usr/include/x86_64-linux-gnu/bits/mman_ext.h
